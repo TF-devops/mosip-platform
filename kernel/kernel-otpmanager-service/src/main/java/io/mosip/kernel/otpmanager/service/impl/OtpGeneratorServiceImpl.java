@@ -80,10 +80,10 @@ public class OtpGeneratorServiceImpl implements OtpGenerator<OtpGeneratorRequest
 			otp.setId(otpDto.getKey());
 			otp.setValidationRetryCount(0);
 			//otp.setOtp(generatedOtp);
-			otp.setOtp("12345");
+			otp.setOtp("123456");
 			otpRepository.save(otp);
-			//otp.setOtp(generatedOtp);
-			response.setOtp("12345");
+			//response.setOtp(generatedOtp);
+			response.setOtp("123456");
 			response.setStatus(OtpStatusConstants.GENERATION_SUCCESSFUL.getProperty());
 		}
 		return response;
