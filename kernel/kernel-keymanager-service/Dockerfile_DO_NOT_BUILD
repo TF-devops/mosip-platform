@@ -21,12 +21,13 @@ ENV spring_config_url_env=${spring_config_url}
 
 RUN mkdir /config
 
-COPY softhsm-application.conf /config
+#COPY softhsm-application.conf /config
+COPY pkcs11-hsm.cfg /config
 
-#RUN mkdir -p /usr/local/lunaclient
-#ADD luna-minimal-client-64.tar.gz /usr/local/lunaclient
-#COPY Chrystoki.conf /etc/
-#ENTRYPOINT /bin/bash
+RUN mkdir -p /usr/local/lunaclient
+ADD luna-minimal-client-64.tar.gz /usr/local/lunaclient
+COPY Chrystoki.conf /etc/
+ENTRYPOINT /bin/bash
 
 COPY ./target/kernel-keymanager-service-*.jar kernel-keymanager-service.jar
 
