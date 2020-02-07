@@ -200,8 +200,8 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>${maven.surefire.plugin.version}</version>
 					<configuration>
-						<skip>false</skip>
-						<useFile>false</useFile>
+						<skip>true</skip>
+						<useFile>true</useFile>
 					</configuration>
 				</plugin>
 				<plugin>
